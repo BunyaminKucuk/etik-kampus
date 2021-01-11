@@ -1,0 +1,41 @@
+<div class="col-lg-5">
+    <h1 class="h1-strong">{{title}}</h1>
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Güncellendi
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        Güncellenemedi
+    </div>
+    <form #userEditForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
+        <p>
+            <label>İsim</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required />
+            <span *ngIf="!name.value && name.touched">İsim boş girilemez</span>
+        </p>
+        <p>
+            <label>Soyisim</label>
+            <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control"
+                required />
+            <span *ngIf="!surname.value && surname.touched">Soyisim boş girilemez</span>
+        </p>
+        <p>
+            <label>Kullanıcı Adı</label>
+            <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required />
+            <span *ngIf="!nick.value && nick.touched">Kullanıcı adı boş girilemez</span>
+        </p>
+        <p>
+            <label>E-posta</label>
+            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" #email="ngModel"
+                [(ngModel)]="user.email" class="form-control" required />
+            <span *ngIf="!email.value && email.touched">E-posta boş girilemez</span>
+        </p>
+        <div class="user-image-for-edit" *ngIf="user.image">
+            <img src="{{ url + 'get-image-user/' + user.image}}" />
+        </div>
+        <p>
+            <label>Profil Resmi</label>
+            <input type="file" placeholder="Upload image" (change)="fileChangeEvent($event)" />
+        </p>
+        <input type="submit" value="Kaydet" class="btn btn-warning" [disabled]="!userEditForm.form.valid" />
+    </form>
+</div>
