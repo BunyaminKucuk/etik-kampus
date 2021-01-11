@@ -8,7 +8,7 @@ export class MainComponent implements OnInit {
     public title: string;
 
     constructor() {
-        this.title = 'Direct messages';
+        this.title = 'Mesajlar';
     }
 
     ngOnInit() {

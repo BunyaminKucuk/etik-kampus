@@ -7,7 +7,7 @@
         <img src="assets/user.png" *ngIf="!identity.image" />
     </div>
     <div class="name-surname pull-left">
-        <a [routerLink]="['/perfil', identity._id]" class="username">
+        <a [routerLink]="['/profil', identity._id]" class="username">
             {{identity.name + ' ' + identity.surname}}
         </a>
         <p class="nickname">
@@ -67,6 +67,6 @@
             <label>Fotoğraf Yükle</label>
             <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)" />
         </p>
-        <input type="submit" value="Send" class="btn btn-success" [disabled]="!newPubForm.form.valid" />
+        <input type="submit" value="Paylaş" class="btn btn-success" [disabled]="!newPubForm.form.valid" />
     </form>
 </div>

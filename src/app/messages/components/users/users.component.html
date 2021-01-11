@@ -5,14 +5,14 @@
             <div class="panel panel-default" *ngIf="follow_me.indexOf(user._id) >= 0">
                 <div class="panel-body">
                     <div class="image-user pull-left">
-                        <a [routerLink]="['/perfil', user._id]">
+                        <a [routerLink]="['/profil', user._id]">
                             <img src="{{url + 'get-image-user/' + user.image}}" *ngIf="user.image" />
                             <img src="assets/user.png" class="avatar-default" *ngIf="!user.image" />
                         </a>
                     </div>
                     <div class="username pull-left">
                         <p class="name-surname">
-                            <a [routerLink]="['/mensajes/conversation', user._id]">
+                            <a [routerLink]="['/message/conversation', user._id]">
                                 {{user.name + ' ' + user.surname}}
                             </a>
                         </p>
@@ -24,8 +24,8 @@
             </div>
         </div>
         <!--        <ul class="pagination pull-right">
-            <li *ngIf="page > 1"><a [routerLink]="['/mensajes/gente', prev_page]">Prev</a></li>
-            <li *ngIf="pages != page"><a [routerLink]="['/mensajes/gente', next_page]">Next</a></li>
+            <li *ngIf="page > 1"><a [routerLink]="['/message/people', prev_page]">Prev</a></li>
+            <li *ngIf="pages != page"><a [routerLink]="['/message/people', next_page]">Next</a></li>
         </ul>-->
     </div>
 </div>

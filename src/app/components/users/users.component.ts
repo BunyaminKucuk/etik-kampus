@@ -32,7 +32,7 @@ export class UsersComponent implements OnInit {
         private _userService: UserService,
         private _followService: FollowService
     ) {
-        this.title = 'Find New Friends';
+        this.title = 'Arkadaş Ekle';
         this.url = GLOBAL.url;
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
@@ -80,7 +80,7 @@ export class UsersComponent implements OnInit {
                     this.follows = response.user_following;
                     this.follow_me = response.user_follow_me;
                     if (page > this.pages) {
-                        this._router.navigate(['/gente', 1]);
+                        this._router.navigate(['/people', 1]);
                     }
                 }
             },

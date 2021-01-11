@@ -28,6 +28,7 @@ import { FollowedComponent } from './components/followed/followed.component';
 // Services
 import {UserService} from './services/user.service';
 import {UserGuard} from './services/user.guard';
+import { MyTimelineComponent } from './components/my-timeline/my-timeline.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {UserGuard} from './services/user.guard';
     PublicationsComponent,
     ProfileComponent,
     FollowingComponent,
-    FollowedComponent
+    FollowedComponent,
+    MyTimelineComponent
   ],
   imports: [
     BrowserModule,
