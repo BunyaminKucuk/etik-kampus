@@ -11,14 +11,13 @@
             <label>E-posta</label>
             <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" #email="ngModel"
                 [(ngModel)]="user.email" class="form-control" required />
-            <span *ngIf="!email.valid && email.touched">E-posta boş.</span>
+            <span *ngIf="email.touched && email.errors?.pattern" style="color:red;font-weight:bold"  >E-posta adresiniz yanlış</span>
         </p>
         <p>
             <label>Şifre</label>
             <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control"
                 required />
-            <span *ngIf="!password.valid && password.touched">Şifre doğrulandı</span>
         </p>
-        <input type="submit" value="Login" class="btn btn-success" [disabled]="!loginForm.form.valid">
+        <input type="submit" value="Giriş" class="btn btn-success" [disabled]="!loginForm.form.valid">
     </form>
 </div>

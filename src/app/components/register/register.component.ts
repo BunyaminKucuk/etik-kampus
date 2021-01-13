@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
         private _router: Router,
         private _userService: UserService
     ) {
-        this.title = 'Register';
+        this.title = 'Kayıt Ol';
         this.user = new User("", "", "", "", "", "", "ROLE_USER", "");
     }
 
